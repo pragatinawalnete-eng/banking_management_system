@@ -8,20 +8,23 @@ public class Transaction {
     private double amount;
     private Account account;
 
+    //Default Constructor
     public Transaction() {
         transactionId = 0;
         transactionType = "";
         amount = 0.0;
         account = null; 
     }
-
+    
+    //Parameterized Constructor
     public Transaction(int transactionId, String transactionType, double amount, Account account) {
         this.transactionId = transactionId;
         this.transactionType = transactionType;
         this.amount = amount;
         this.account = account;
     }
-
+   
+    //Copy Constructor
     public Transaction(Transaction t) {
         this.transactionId = t.transactionId;
         this.transactionType = t.transactionType;
@@ -29,6 +32,7 @@ public class Transaction {
         this.account = t.account;
     }
 
+    //Getters
     public int getTransactionId() {
         return transactionId;
     }
@@ -44,7 +48,8 @@ public class Transaction {
     public Account getAccount(){
         return account;
     }
-
+  
+    //Display Transaction
     public void displayTransaction(){
         System.out.println("Transaction ID : " + transactionId);
         System.out.println("Transaction Type :" + transactionType);

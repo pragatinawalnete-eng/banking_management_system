@@ -5,11 +5,13 @@ import module1.Account;
 
 public class TransactionManager{
     private ArrayList<Transaction>transactions;
-     
+    
+    //Default Constructor
     public TransactionManager(){
         transactions = new ArrayList<>();
     }
 
+    //Deposit Money
     public void deposit(Account account, double amount){
         if(amount > 0){
             account.deposit(amount);
@@ -23,6 +25,7 @@ public class TransactionManager{
         }
     }
 
+    //Withdraw Money
     public void withdraw(Account account, double amount){
          if(amount > 0 && amount <= account.getBalance()){
             account.withdraw(amount);
@@ -35,11 +38,14 @@ public class TransactionManager{
          }
     }
 
+    //Add Transaction Record
     public void addTransaction(Transaction transaction){
         transactions.add(transaction);
         System.out.println("Transaction record added.");
     }
-     public void displayTransactions(){
+     
+    //Display All Transactions
+    public void displayTransactions(){
         System.out.println("\n====TRANSACTION HISTORY====");
 
         if(transactions.isEmpty()) {
@@ -68,6 +74,7 @@ public class TransactionManager{
          }
      }
 
+     //Check Account Balance
      public void checkBalance(Account account) {
         System.out.println("\n==== ACCOUNT BALANCE ====");
         System.out.println("Account Number : " + account.getAccountNumber());
